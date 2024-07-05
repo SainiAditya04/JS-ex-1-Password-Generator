@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="flex h-screen items-center justify-center text-xl bg-[#212121] text-[#fff]">
+
+    <div class="container flex flex-col justify-center items-center gap-4">
+
+        <h1 class="text-[#964EC2] text-3xl font-bold">Password Generator</h1>
+
+        <div class="display-container flex gap-4 items-center justify-center">
+            <input readonly placeholder="Password here" class="display border-2 rounded-md text-center font-semibold text-black px-3 py-2 mx-2" data-passwordDisplay>
+            <button data-copyButton class="flex flex-col justify-center items-center">
+                <span data-copyMessage class="text-[12px] font-bold text-red-600"></span>
+                <span class="far fa-copy"></span>
+            </button>
+        </div>
+
+        <div class="input-container flex flex-col gap-3 items-center justify-center">
+            <div class="length-container flex gap-4">
+                <p>Password length</p>
+                <p data-lengthNumber>0</p>
+            </div>
+
+            <input type="range" min="1" max="20" class="w-[250px] bg-gray-200 rounded-lg cursor-pointer" step="1" data-lengthSlider>
+
+            <div>
+                <div>
+                    <input type="checkbox" id="uppercase">
+                    <label for="uppercase">Include uppercase letters</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="lowercase">
+                    <label for="lowercase">Include lowercase letters</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="numbers">
+                    <label for="numbers">Include Numbers</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="symbols">
+                    <label for="symbols">Include Special characters</label>
+                </div>
+            </div>
+
+            <div class="strength-container flex gap-3">
+                <p>Strength of the password: </p>
+                <div data-indicator class="font-bold"></div>
+            </div>
+
+            <button 
+            class="generateButton px-5 py-2 rounded-lg bg-[#984063] my-4 hover:bg-[#90063d] text-center font-semibold"
+            >
+                Generate password
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
